@@ -1,0 +1,83 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Spacing" />
+
+# Spacing
+
+디자인 시스템의 간격 시스템입니다.
+
+## Component Spacing
+
+컴포넌트 내부 간격(Padding, Gap)에 주로 사용됩니다.
+
+<div className="sb-unstyled">
+  <table className="w-full text-left border-collapse">
+    <thead>
+      <tr className="border-b border-gray-200">
+        <th className="py-2">Token</th>
+        <th className="py-2">rem</th>
+        <th className="py-2">px</th>
+        <th className="py-2">Visual</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        { token: "spacing-0_5", rem: "0.125rem", px: "2px", w: 2 },
+        { token: "spacing-1", rem: "0.25rem", px: "4px", w: 4 },
+        { token: "spacing-2", rem: "0.5rem", px: "8px", w: 8 },
+        { token: "spacing-3", rem: "0.75rem", px: "12px", w: 12 },
+        { token: "spacing-4", rem: "1rem", px: "16px", w: 16 },
+        { token: "spacing-5", rem: "1.25rem", px: "20px", w: 20 },
+        { token: "spacing-6", rem: "1.5rem", px: "24px", w: 24 },
+        { token: "spacing-8", rem: "2rem", px: "32px", w: 32 },
+        { token: "spacing-9", rem: "2.25rem", px: "36px", w: 36 },
+      ].map((space) => (
+        <tr key={space.token} className="border-b border-gray-100">
+          <td className="py-2 font-mono text-sm text-blue-600">{space.token}</td>
+          <td className="py-2 text-sm text-gray-500">{space.rem}</td>
+          <td className="py-2 text-sm text-gray-500">{space.px}</td>
+          <td className="py-2">
+            <div style={{ width: space.px }} className="h-4 bg-blue-400" title={`${space.px} width`} />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<br />
+
+## Area Spacing
+
+섹션이나 큰 영역 간의 간격(Margin)에 사용됩니다.
+
+<div className="sb-unstyled">
+  <table className="w-full text-left border-collapse">
+    <thead>
+      <tr className="border-b border-gray-200">
+        <th className="py-2">Token</th>
+        <th className="py-2">rem</th>
+        <th className="py-2">px</th>
+        <th className="py-2">Visual</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        { token: "spacing-10", rem: "2.5rem", px: "40px" },
+        { token: "spacing-12", rem: "3rem", px: "48px" },
+        { token: "spacing-14", rem: "3.5rem", px: "56px" },
+        { token: "spacing-16", rem: "4rem", px: "64px" },
+        { token: "spacing-18", rem: "4.5rem", px: "72px" },
+      ].map((space) => (
+        <tr key={space.token} className="border-b border-gray-100">
+          <td className="py-2 font-mono text-sm text-blue-600">{space.token}</td>
+          <td className="py-2 text-sm text-gray-500">{space.rem}</td>
+          <td className="py-2 text-sm text-gray-500">{space.px}</td>
+          <td className="py-2">
+            <div style={{ width: space.px }} className="h-4 bg-indigo-400" title={`${space.px} width`} />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

@@ -1,13 +1,66 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* ============================
+     1. Primitive Colors
+     ============================ */
+  --color-brand-main: #4c79ff;
+  --color-brand-light: #78b0ff;
+
+  /* 투명도 버전 */
+  --color-brand-main-10: var(--brand-main-10);
+  --color-brand-main-30: var(--brand-main-30);
+  --color-brand-light-10: var(--brand-light-10);
+  --color-brand-light-30: var(--brand-light-30);
+
+  /* Gray Scale */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f0f2f5;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #ccd0d6;
+  --color-gray-400: #969da8; /* Disabled 색상 */
+  --color-gray-500: #717887;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #394252;
+  --color-gray-800: #1f2937;
+  --color-black: #000000;
+
+  /* Secondary Colors */
+  --color-indigo: #023e99;
+  --color-informative: #2563eb;
+  --color-negative: #dc2626;
+  --color-notice: #fbbf24;
+  --color-positive: #22c55e;
+  --color-fuchsia: #fd28ec;
+
+  /* Dim Colors (Overlay) */
+  --color-dim-50: var(--dim-50);
+  --color-dim-70: var(--dim-70);
+
+  /* 상태 버전 (Hover, Active) */
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-active: var(--brand-active);
+
+  --color-brand-gradient-start: #4c79ff;
+  --color-brand-gradient-end: #023e99;
+
+  /* ============================
+     2. Shadcn Semantic Mapping 
+     ============================ */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
   --font-mono: var(--font-geist-mono);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -21,6 +74,7 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -37,6 +91,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -44,75 +99,127 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Component Spacing (2px ~ 36px) */
+  --spacing-0_5: 0.125rem; /* 2px */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-9: 2.25rem; /* 36px */
+
+  /* Area Spacing (40px ~ 72px) */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-14: 3.5rem; /* 56px */
+  --spacing-16: 4rem; /* 64px */
+  --spacing-18: 4.5rem; /* 72px (이미지의 마지막 값) */
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+
+  /* Tailwind에서 Figma 토큰명을 동일하게 사용하기 위한 mix 설정 */
+  /* Opacity Variants */
+  --brand-main-10: color-mix(in srgb, var(--color-brand-main) 10%, transparent);
+  --brand-main-30: color-mix(in srgb, var(--color-brand-main) 30%, transparent);
+  --brand-light-10: color-mix(in srgb, var(--color-brand-light) 10%, transparent);
+  --brand-light-30: color-mix(in srgb, var(--color-brand-light) 30%, transparent);
+
+  /* State Variants (Black Mix) */
+  --brand-hover: color-mix(in srgb, var(--color-brand-main), black 10%);
+  --brand-active: color-mix(in srgb, var(--color-brand-main), black 20%);
+  --brand-disabled: color-mix(in srgb, var(--color-gray-400), black 20%);
+
+  /* Dim Variants (Black Overlay) */
+  --dim-50: color-mix(in srgb, #000000 50%, transparent);
+  --dim-70: color-mix(in srgb, #000000 70%, transparent);
+
+  /* =========================================================
+     Base & Semantic
+     ========================================================= */
+  --background: var(--color-white);
+  --foreground: var(--color-gray-800);
+
+  --card: var(--color-white);
+  --card-foreground: var(--color-gray-800);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-gray-800);
+
+  --primary: var(--color-brand-main);
+  --primary-foreground: var(--color-white);
+
+  --secondary: var(--color-brand-light);
+  --secondary-foreground: var(--color-brand-main);
+
+  --muted: var(--color-gray-100);
+  --muted-foreground: var(--color-gray-500);
+
+  --accent: var(--color-gray-100);
+  --accent-foreground: var(--color-gray-800);
+
+  --destructive: var(--color-negative);
+  --destructive-foreground: var(--color-white);
+
+  --border: var(--color-gray-300);
+
+  --input: var(--color-gray-300);
+
+  --ring: var(--color-brand-main);
+
+  /* Chart Defaults */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Sidebar */
+  --sidebar: var(--color-gray-50);
+  --sidebar-foreground: var(--color-gray-800);
+  --sidebar-primary: var(--color-brand-main);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--color-gray-100);
+  --sidebar-accent-foreground: var(--color-brand-main);
+  --sidebar-border: var(--color-gray-200);
+  --sidebar-ring: var(--color-brand-main);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: var(--color-gray-800);
+  --foreground: var(--color-white);
+  --card: var(--color-gray-800);
+  --card-foreground: var(--color-white);
+  --popover: var(--color-gray-800);
+  --popover-foreground: var(--color-white);
+  --primary: var(--color-brand-main);
+  --primary-foreground: var(--color-white);
+  --secondary: var(--color-gray-700);
+  --secondary-foreground: var(--color-white);
+  --muted: var(--color-gray-700);
+  --muted-foreground: var(--color-gray-400);
+  --accent: var(--color-gray-700);
+  --accent-foreground: var(--color-white);
+  --destructive: 0.6 0.2 25;
+  --border: var(--color-gray-600);
+  --input: var(--color-gray-600);
+  --ring: var(--color-brand-light);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar: var(--color-gray-800);
+  --sidebar-foreground: var(--color-white);
+  --sidebar-primary: var(--color-brand-main);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--color-gray-700);
+  --sidebar-accent-foreground: var(--color-white);
+  --sidebar-border: var(--color-gray-600);
+  --sidebar-ring: var(--color-brand-light);
 }
 
 @layer base {
@@ -121,5 +228,193 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* 3. Typography System
+  Naming Convention: text-[Type]-[Weight]
+  B: Bold (700), S: SemiBold (600), M: Medium (500), R: Regular (400)
+*/
+@layer utilities {
+  /* ================= Heading (24px/30px) ================= */
+  .text-heading-b {
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-heading-s {
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-heading-m {
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-heading-r {
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ================= Title (20px/24px) ================= */
+  .text-title-b {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-title-s {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-title-m {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-title-r {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ================= Sub-title (18px/22px) ================= */
+  .text-subtitle-b {
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-subtitle-s {
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-subtitle-m {
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-subtitle-r {
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ================= Body (16px/20px) ================= */
+  .text-body-b {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-body-s {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-body-m {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-body-r {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ================= Body Small (14px/18px) ================= */
+  .text-body-small-b {
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-body-small-s {
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-body-small-m {
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-body-small-r {
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ================= Caption (12px/16px) ================= */
+  .text-caption-b {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-caption-s {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-caption-m {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-caption-r {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ================= Label (10px/12px) ================= */
+  .text-label-b {
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-label-s {
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-label-m {
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+  .text-label-r {
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 }
