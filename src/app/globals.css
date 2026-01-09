@@ -4,10 +4,57 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* ============================
+     1. Primitive Colors
+     ============================ */
+  --color-brand-main: #4c79ff;
+  --color-brand-light: #78b0ff;
+
+  /* 투명도 버전 */
+  --color-brand-main-10: var(--brand-main-10);
+  --color-brand-main-30: var(--brand-main-30);
+  --color-brand-light-10: var(--brand-light-10);
+  --color-brand-light-30: var(--brand-light-30);
+
+  /* 상태 버전 (Hover, Active) */
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-active: var(--brand-active);
+
+  --color-brand-gradient-start: #4c79ff;
+  --color-brand-gradient-end: #023e99;
+
+  /* Secondary Colors */
+  --color-indigo: #023e99;
+  --color-informative: #2563eb;
+  --color-negative: #dc2626;
+  --color-notice: #fbbf24;
+  --color-positive: #22c55e;
+  --color-fuchsia: #fd28ec;
+
+  /* Gray Scale */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f0f2f5;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #ccd0d6;
+  --color-gray-400: #969da8; /* Disabled 색상 */
+  --color-gray-500: #717887;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #394252;
+  --color-gray-800: #1f2937;
+
+  /* ✨ Dim Colors (Overlay) */
+  --color-dim-50: var(--dim-50);
+  --color-dim-70: var(--dim-70);
+
+  /* ============================
+     2. Shadcn Semantic Mapping 
+     ============================ */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -21,6 +68,7 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -37,6 +85,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -48,71 +97,104 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+
+  /* Tailwind에서 Figma 토큰명을 동일하게 사용하기 위한 mix 설정 */
+  /* Opacity Variants */
+  --brand-main-10: color-mix(in srgb, var(--color-brand-main) 10%, transparent);
+  --brand-main-30: color-mix(in srgb, var(--color-brand-main) 30%, transparent);
+  --brand-light-10: color-mix(in srgb, var(--color-brand-light) 10%, transparent);
+  --brand-light-30: color-mix(in srgb, var(--color-brand-light) 30%, transparent);
+
+  /* State Variants (Black Mix) */
+  --brand-hover: color-mix(in srgb, var(--color-brand-main), black 10%);
+  --brand-active: color-mix(in srgb, var(--color-brand-main), black 20%);
+
+  /* Dim Variants (Black Overlay) */
+  --dim-50: color-mix(in srgb, #000000 50%, transparent);
+  --dim-70: color-mix(in srgb, #000000 70%, transparent);
+
+  /* =========================================================
+     Base & Semantic
+     ========================================================= */
+  --background: var(--color-white);
+  --foreground: var(--color-gray-800);
+
+  --card: var(--color-white);
+  --card-foreground: var(--color-gray-800);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-gray-800);
+
+  --primary: var(--color-brand-main);
+  --primary-foreground: var(--color-white);
+
+  --secondary: var(--color-brand-light);
+  --secondary-foreground: var(--color-brand-main);
+
+  --muted: var(--color-gray-100);
+  --muted-foreground: var(--color-gray-500);
+
+  --accent: var(--color-gray-100);
+  --accent-foreground: var(--color-gray-800);
+
+  --destructive: var(--color-negative);
+  --destructive-foreground: var(--color-white);
+
+  --border: var(--color-gray-300);
+
+  --input: var(--color-gray-300);
+
+  --ring: var(--color-brand-main);
+
+  /* Chart Defaults */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Sidebar */
+  --sidebar: var(--color-gray-50);
+  --sidebar-foreground: var(--color-gray-800);
+  --sidebar-primary: var(--color-brand-main);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--color-gray-100);
+  --sidebar-accent-foreground: var(--color-brand-main);
+  --sidebar-border: var(--color-gray-200);
+  --sidebar-ring: var(--color-brand-main);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: var(--color-gray-800);
+  --foreground: var(--color-white);
+  --card: var(--color-gray-800);
+  --card-foreground: var(--color-white);
+  --popover: var(--color-gray-800);
+  --popover-foreground: var(--color-white);
+  --primary: var(--color-brand-main);
+  --primary-foreground: var(--color-white);
+  --secondary: var(--color-gray-700);
+  --secondary-foreground: var(--color-white);
+  --muted: var(--color-gray-700);
+  --muted-foreground: var(--color-gray-400);
+  --accent: var(--color-gray-700);
+  --accent-foreground: var(--color-white);
+  --destructive: 0.6 0.2 25;
+  --border: var(--color-gray-600);
+  --input: var(--color-gray-600);
+  --ring: var(--color-brand-light);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar: var(--color-gray-800);
+  --sidebar-foreground: var(--color-white);
+  --sidebar-primary: var(--color-brand-main);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--color-gray-700);
+  --sidebar-accent-foreground: var(--color-white);
+  --sidebar-border: var(--color-gray-600);
+  --sidebar-ring: var(--color-brand-light);
 }
 
 @layer base {
