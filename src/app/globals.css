@@ -236,183 +236,183 @@
 @layer utilities {
   /* ================= Heading (24px/30px) ================= */
   .text-heading-b {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
   }
   .text-heading-s {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
   }
   .text-heading-m {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
   }
   .text-heading-r {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 1.5rem !important;
+    line-height: 1.875rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 
   /* ================= Title (20px/24px) ================= */
   .text-title-b {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
   }
   .text-title-s {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
   }
   .text-title-m {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
   }
   .text-title-r {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 
   /* ================= Sub-title (18px/22px) ================= */
   .text-subtitle-b {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
   }
   .text-subtitle-s {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
   }
   .text-subtitle-m {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
   }
   .text-subtitle-r {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 
   /* ================= Body (16px/20px) ================= */
   .text-body-b {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
   }
   .text-body-s {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
   }
   .text-body-m {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
   }
   .text-body-r {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 
   /* ================= Body Small (14px/18px) ================= */
   .text-body-small-b {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
   }
   .text-body-small-s {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
   }
   .text-body-small-m {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
   }
   .text-body-small-r {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 0.875rem !important;
+    line-height: 1.125rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 
   /* ================= Caption (12px/16px) ================= */
   .text-caption-b {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
   }
   .text-caption-s {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
   }
   .text-caption-m {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
   }
   .text-caption-r {
-    font-size: 0.75rem;
-    line-height: 1rem;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 
   /* ================= Label (10px/12px) ================= */
   .text-label-b {
-    font-size: 0.625rem;
-    line-height: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
   }
   .text-label-s {
-    font-size: 0.625rem;
-    line-height: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0;
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
   }
   .text-label-m {
-    font-size: 0.625rem;
-    line-height: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
   }
   .text-label-r {
-    font-size: 0.625rem;
-    line-height: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 0.625rem !important;
+    line-height: 0.75rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
   }
 }
