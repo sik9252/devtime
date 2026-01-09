@@ -18,21 +18,6 @@
   --color-brand-light-10: var(--brand-light-10);
   --color-brand-light-30: var(--brand-light-30);
 
-  /* 상태 버전 (Hover, Active) */
-  --color-brand-hover: var(--brand-hover);
-  --color-brand-active: var(--brand-active);
-
-  --color-brand-gradient-start: #4c79ff;
-  --color-brand-gradient-end: #023e99;
-
-  /* Secondary Colors */
-  --color-indigo: #023e99;
-  --color-informative: #2563eb;
-  --color-negative: #dc2626;
-  --color-notice: #fbbf24;
-  --color-positive: #22c55e;
-  --color-fuchsia: #fd28ec;
-
   /* Gray Scale */
   --color-white: #ffffff;
   --color-gray-50: #f9fafb;
@@ -44,10 +29,26 @@
   --color-gray-600: #4b5563;
   --color-gray-700: #394252;
   --color-gray-800: #1f2937;
+  --color-black: #000000;
+
+  /* Secondary Colors */
+  --color-indigo: #023e99;
+  --color-informative: #2563eb;
+  --color-negative: #dc2626;
+  --color-notice: #fbbf24;
+  --color-positive: #22c55e;
+  --color-fuchsia: #fd28ec;
 
   /* Dim Colors (Overlay) */
   --color-dim-50: var(--dim-50);
   --color-dim-70: var(--dim-70);
+
+  /* 상태 버전 (Hover, Active) */
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-active: var(--brand-active);
+
+  --color-brand-gradient-start: #4c79ff;
+  --color-brand-gradient-end: #023e99;
 
   /* ============================
      2. Shadcn Semantic Mapping 
@@ -131,6 +132,7 @@
   /* State Variants (Black Mix) */
   --brand-hover: color-mix(in srgb, var(--color-brand-main), black 10%);
   --brand-active: color-mix(in srgb, var(--color-brand-main), black 20%);
+  --brand-disabled: color-mix(in srgb, var(--color-gray-400), black 20%);
 
   /* Dim Variants (Black Overlay) */
   --dim-50: color-mix(in srgb, #000000 50%, transparent);
