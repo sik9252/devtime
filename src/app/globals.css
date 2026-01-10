@@ -43,9 +43,11 @@
   --color-dim-50: var(--dim-50);
   --color-dim-70: var(--dim-70);
 
-  /* 상태 버전 (Hover, Active) */
+  /* 상태 버전 (Hover, Active, Disabled) */
   --color-brand-hover: var(--brand-hover);
   --color-brand-active: var(--brand-active);
+  --color-brand-disabled-dark: var(--brand-disabled-dark);
+  --color-brand-disabled: var(--brand-disabled);
 
   --color-brand-gradient-start: #4c79ff;
   --color-brand-gradient-end: #023e99;
@@ -132,7 +134,8 @@
   /* State Variants (Black Mix) */
   --brand-hover: color-mix(in srgb, var(--color-brand-main), black 10%);
   --brand-active: color-mix(in srgb, var(--color-brand-main), black 20%);
-  --brand-disabled: color-mix(in srgb, var(--color-gray-400), black 20%);
+  --brand-disabled-dark: color-mix(in srgb, var(--color-gray-400), black 20%);
+  --brand-disabled: color-mix(in srgb, var(--color-gray-200), black 20%);
 
   /* Dim Variants (Black Overlay) */
   --dim-50: color-mix(in srgb, #000000 50%, transparent);
@@ -168,7 +171,7 @@
 
   --input: var(--color-gray-300);
 
-  --ring: var(--color-brand-main);
+  --ring: var(--color-fuchsia);
 
   /* Chart Defaults */
   --chart-1: oklch(0.646 0.222 41.116);
