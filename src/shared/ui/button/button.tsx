@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
@@ -36,13 +38,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, onClick, disabled, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
 
-    // asChild로 a태그 등을 넣어 link로 활용할 때 disabled 상태와 함께 사용되면, 이동을 막기 위해 한 번 더 체크한다.
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       if (disabled) {
         e.preventDefault();
         return;
       }
-
       onClick?.(e);
     };
 
