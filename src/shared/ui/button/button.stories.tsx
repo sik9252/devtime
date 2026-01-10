@@ -1,87 +1,92 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from './button'
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "./button";
 
 const meta = {
-  title: 'Shared/UI/Button',
+  title: "Components/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
+    docs: {
+      description: {
+        component: "디자인 시스템의 버튼 컴포넌트입니다. Variant와 State에 따라 스타일이 변경됩니다.",
+      },
+    },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+      control: "select",
+      options: ["primary", "secondary", "tertiary"],
+      description: "버튼의 스타일 종류",
     },
     size: {
-      control: 'select',
-      options: ['default', 'sm', 'lg', 'icon'],
+      control: "select",
+      options: ["default"],
+      description: "버튼의 크기",
+    },
+    disabled: {
+      control: "boolean",
+      description: "비활성화 여부",
     },
   },
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Primary: Story = {
   args: {
-    children: 'Button',
-    variant: 'default',
+    children: "Button",
+    variant: "primary",
   },
-}
-
-export const Destructive: Story = {
-  args: {
-    children: 'Delete',
-    variant: 'destructive',
-  },
-}
-
-export const Outline: Story = {
-  args: {
-    children: 'Outline',
-    variant: 'outline',
-  },
-}
+};
 
 export const Secondary: Story = {
   args: {
-    children: 'Secondary',
-    variant: 'secondary',
+    children: "Button",
+    variant: "secondary",
   },
-}
+};
 
-export const Ghost: Story = {
+export const Tertiary: Story = {
   args: {
-    children: 'Ghost',
-    variant: 'ghost',
+    children: "Button",
+    variant: "tertiary",
   },
-}
+};
 
-export const Link: Story = {
-  args: {
-    children: 'Link',
-    variant: 'link',
+export const Disabled: Story = {
+  render: () => (
+    <div className="flex gap-4">
+      <Button variant="primary" disabled>
+        Primary
+      </Button>
+      <Button variant="secondary" disabled>
+        Secondary
+      </Button>
+      <Button variant="tertiary" disabled>
+        Tertiary
+      </Button>
+    </div>
+  ),
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      source: {
+        code: `
+          <div className="flex gap-4">
+            <Button variant="primary" disabled>
+              Primary
+            </Button>
+            <Button variant="secondary" disabled>
+              Secondary
+            </Button>
+            <Button variant="tertiary" disabled>
+              Tertiary
+            </Button>
+          </div>
+        `,
+      },
+    },
   },
-}
-
-export const Small: Story = {
-  args: {
-    children: 'Small',
-    size: 'sm',
-  },
-}
-
-export const Large: Story = {
-  args: {
-    children: 'Large',
-    size: 'lg',
-  },
-}
-
-export const Icon: Story = {
-  args: {
-    children: '🚀',
-    size: 'icon',
-  },
-}
+};
