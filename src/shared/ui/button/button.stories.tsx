@@ -4,15 +4,6 @@ import { Button } from "./button";
 const meta = {
   title: "Components/Button",
   component: Button,
-  parameters: {
-    layout: "centered",
-    docs: {
-      description: {
-        component:
-          "디자인 시스템의 버튼 컴포넌트입니다. Variant와 State에 따라 스타일이 변경됩니다.",
-      },
-    },
-  },
   tags: ["autodocs"],
   argTypes: {
     variant: {
