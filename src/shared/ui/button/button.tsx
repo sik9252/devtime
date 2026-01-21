@@ -31,40 +31,41 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { className, variant, size, asChild = false, onClick, disabled, ...props },
-    ref,
-  ) => {
-    const Comp = asChild ? Slot : "button";
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  onClick,
+  disabled,
+  ref,
+  ...props
+}: ButtonProps & { ref?: React.Ref<HTMLButtonElement> }) {
+  const Comp = asChild ? Slot : "button";
 
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (disabled) {
-        e.preventDefault();
-        return;
-      }
-      onClick?.(e);
-    };
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (disabled) {
+      e.preventDefault();
+      return;
+    }
+    onClick?.(e);
+  };
 
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        disabled={disabled}
-        aria-disabled={disabled}
-        onClick={handleClick}
-        {...props}
-      />
-    );
-  },
-);
-
-Button.displayName = "Button";
+  return (
+    <Comp
+      className={cn(buttonVariants({ variant, size, className }))}
+      ref={ref}
+      disabled={disabled}
+      aria-disabled={disabled}
+      onClick={handleClick}
+      {...props}
+    />
+  );
+}
 
 export { Button, buttonVariants };

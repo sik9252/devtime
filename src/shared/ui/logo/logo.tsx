@@ -2,15 +2,24 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib/utils";
 
-const logoVariants = cva("inline-block fill-current text-brand-main transition-colors", {
-  variants: {},
-});
+const logoVariants = cva(
+  "inline-block fill-current text-brand-main transition-colors",
+  {
+    variants: {},
+  },
+);
 
-export interface LogoProps extends React.SVGProps<SVGSVGElement>, VariantProps<typeof logoVariants> {
+export interface LogoProps
+  extends React.SVGProps<SVGSVGElement>, VariantProps<typeof logoVariants> {
   variant?: "horizontal" | "vertical";
 }
 
-const Logo = React.forwardRef<SVGSVGElement, LogoProps>(({ className, variant = "horizontal", ...props }, ref) => {
+function Logo({
+  className,
+  variant = "horizontal",
+  ref,
+  ...props
+}: LogoProps & { ref?: React.Ref<SVGSVGElement> }) {
   const renderContent = () => {
     if (variant === "vertical") {
       return (
@@ -332,7 +341,7 @@ const Logo = React.forwardRef<SVGSVGElement, LogoProps>(({ className, variant = 
   };
 
   return renderContent();
-});
+}
 
 Logo.displayName = "Logo";
 
