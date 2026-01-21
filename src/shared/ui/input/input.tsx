@@ -12,8 +12,12 @@ const Input = ({
   leadingIcon,
   trailingIcon,
   disabled,
+  id,
   ...props
 }: InputProps) => {
+  const generatedId = React.useId();
+  const inputId = id || generatedId;
+
   return (
     <div className="relative flex w-full items-center">
       {leadingIcon && (
@@ -27,11 +31,12 @@ const Input = ({
         </div>
       )}
       <input
+        id={inputId}
         type={type}
         data-slot="input"
         disabled={disabled}
         className={cn(
-          "typo-body-m md:typo-body-small-m h-11 w-full min-w-0 rounded-sm border border-gray-300 bg-transparent px-3 py-4 outline-none",
+          "typo-body-m md:typo-body-small-m w-full min-w-0 rounded-sm border border-gray-300 bg-transparent px-4 py-3 outline-none",
           "dark:bg-gray-300/30",
           "placeholder:typo-body-m",
           "selection:bg-primary selection:text-primary-foreground",
