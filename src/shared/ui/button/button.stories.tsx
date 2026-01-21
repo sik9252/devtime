@@ -4,14 +4,6 @@ import { Button } from "./button";
 const meta = {
   title: "Components/Button",
   component: Button,
-  parameters: {
-    layout: "centered",
-    docs: {
-      description: {
-        component: "디자인 시스템의 버튼 컴포넌트입니다. Variant와 State에 따라 스타일이 변경됩니다.",
-      },
-    },
-  },
   tags: ["autodocs"],
   argTypes: {
     variant: {
@@ -21,7 +13,7 @@ const meta = {
     },
     size: {
       control: "select",
-      options: ["default"],
+      options: ["large", "medium", "small"],
       description: "버튼의 크기",
     },
     disabled: {
@@ -53,6 +45,22 @@ export const Tertiary: Story = {
     children: "Button",
     variant: "tertiary",
   },
+};
+
+export const WithSize: Story = {
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Button variant="primary" size="large">
+        Large
+      </Button>
+      <Button variant="primary" size="medium">
+        Medium
+      </Button>
+      <Button variant="primary" size="small">
+        Small
+      </Button>
+    </div>
+  ),
 };
 
 export const Disabled: Story = {

@@ -18,24 +18,30 @@ const buttonVariants = cva(
           "bg-gray-50 text-brand-main hover:bg-gray-100 active:bg-gray-100 disabled:bg-brand-disabled/40 disabled:text-gray-400",
       },
       size: {
-        default: "h-12 px-4 py-3",
+        large: "h-13 px-4 py-3",
+        medium: "h-12 px-4 py-3",
+        small: "h-11 px-4 py-3",
       },
     },
     defaultVariants: {
       variant: "primary",
-      size: "default",
+      size: "medium",
     },
-  }
+  },
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, onClick, disabled, ...props }, ref) => {
+  (
+    { className, variant, size, asChild = false, onClick, disabled, ...props },
+    ref,
+  ) => {
     const Comp = asChild ? Slot : "button";
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -56,7 +62,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 Button.displayName = "Button";
