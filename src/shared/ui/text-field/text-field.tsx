@@ -36,7 +36,7 @@ function TextField({
   const isSuccess = !!successMessage;
 
   return (
-    <div className={"flex w-full flex-col gap-1.5"}>
+    <div className={"flex w-full flex-col gap-2"}>
       {label && (
         <Label htmlFor={inputId} className={cn(disabled && "opacity-50")}>
           {label}
