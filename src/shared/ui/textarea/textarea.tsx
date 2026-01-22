@@ -24,7 +24,7 @@ function Textarea({ label, className, id, disabled, ...props }: TextareaProps) {
         data-slot="textarea"
         disabled={disabled}
         className={cn(
-          "typo-body-m md:typo-body-small-m w-full min-w-0 resize-none rounded-sm border border-gray-300 bg-transparent px-4 py-3 outline-none",
+          "typo-body-m md:typo-body-small-m w-full min-w-0 resize-none rounded-sm border border-transparent bg-gray-50 px-4 py-3 outline-none",
           "dark:bg-gray-300/30",
           "placeholder:typo-body-m",
           "selection:bg-primary selection:text-primary-foreground",
