@@ -1,6 +1,6 @@
 import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
 
-<Meta title="Foundations/Colors" />
+<Meta title="Design Tokens/Colors" />
 
 export const ColorCard = ({ name, value, className }) => (
   <div className="flex flex-col gap-2">
@@ -10,7 +10,9 @@ export const ColorCard = ({ name, value, className }) => (
     />
     <div className="flex flex-col">
       <span className="text-body-s text-gray-900">{name}</span>
-      <span className="text-body-small-m text-gray-500 font-mono break-all">{value}</span>
+      <span className="text-body-small-m font-mono break-all text-gray-500">
+        {value}
+      </span>
     </div>
   </div>
 );
@@ -28,7 +30,7 @@ export const ColorCard = ({ name, value, className }) => (
 {/* 1. Brand Main Row */}
 
 <div>
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
     <ColorCard name="Brand Main" value="var(--color-brand-main)" />
     <ColorCard name="Main 30%" value="var(--brand-main-30)" />
     <ColorCard name="Main 10%" value="var(--brand-main-10)" />
@@ -38,7 +40,7 @@ export const ColorCard = ({ name, value, className }) => (
 {/* 2. Brand Light Row */}
 
 <div>
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
     <ColorCard name="Brand Light" value="var(--color-brand-light)" />
     <ColorCard name="Light 30%" value="var(--brand-light-30)" />
     <ColorCard name="Light 10%" value="var(--brand-light-10)" />
@@ -48,8 +50,11 @@ export const ColorCard = ({ name, value, className }) => (
 {/* 3. Gradient Row */}
 
 <div>
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <ColorCard name="Gradient Start" value="var(--color-brand-gradient-start)" />
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <ColorCard
+      name="Gradient Start"
+      value="var(--color-brand-gradient-start)"
+    />
     <ColorCard name="Gradient End" value="var(--color-brand-gradient-end)" />
   </div>
 </div>
@@ -60,7 +65,7 @@ export const ColorCard = ({ name, value, className }) => (
 
 중립적인 회색 톤 팔레트입니다.
 
-<div className="grid grid-cols-2 md:grid-cols-5 gap-4 my-4">
+<div className="my-4 grid grid-cols-2 gap-4 md:grid-cols-5">
   <ColorCard name="50" value="var(--color-gray-50)" />
   <ColorCard name="100" value="var(--color-gray-100)" />
   <ColorCard name="200" value="var(--color-gray-200)" />
@@ -76,7 +81,7 @@ export const ColorCard = ({ name, value, className }) => (
 
 기능별 의미를 전달하는 보조 컬러입니다.
 
-<div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-4">
+<div className="my-4 grid grid-cols-2 gap-4 md:grid-cols-4">
   <ColorCard name="Indigo" value="var(--color-indigo)" />
   <ColorCard name="Informative" value="var(--color-informative)" />
   <ColorCard name="Negative" value="var(--color-negative)" />
@@ -89,7 +94,7 @@ export const ColorCard = ({ name, value, className }) => (
 
 Dim 처리 및 그림자 효과에 사용되는 컬러입니다.
 
-<div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-4">
+<div className="my-4 grid grid-cols-2 gap-4 md:grid-cols-4">
   <ColorCard name="Dim 50%" value="var(--dim-50)" />
   <ColorCard name="Dim 70%" value="var(--dim-70)" />
   <ColorCard name="Shadow" value="var(--color-black)" />
@@ -99,7 +104,7 @@ Dim 처리 및 그림자 효과에 사용되는 컬러입니다.
 
 상호작용 상태에 따른 컬러 변화입니다.
 
-<div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-4">
+<div className="my-4 grid grid-cols-2 gap-4 md:grid-cols-4">
   <ColorCard name="Hover" value="var(--brand-hover)" />
   <ColorCard name="Active" value="var(--brand-active)" />
   <ColorCard name="Disabled" value="var(--brand-disabled)" />
