@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 
-<Meta title="Foundations/Spacing" />
+<Meta title="Design Tokens/Spacing" />
 
 # Spacing
 
@@ -11,7 +11,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
 컴포넌트 내부 간격(Padding, Gap)에 주로 사용됩니다.
 
 <div className="sb-unstyled">
-  <table className="w-full text-left border-collapse">
+  <table className="w-full border-collapse text-left">
     <thead>
       <tr className="border-b border-gray-200">
         <th className="py-2">Token</th>
@@ -33,11 +33,17 @@ import { Meta } from "@storybook/addon-docs/blocks";
         { token: "spacing-9", rem: "2.25rem", px: "36px", w: 36 },
       ].map((space) => (
         <tr key={space.token} className="border-b border-gray-100">
-          <td className="py-2 font-mono text-sm text-blue-600">{space.token}</td>
+          <td className="py-2 font-mono text-sm text-blue-600">
+            {space.token}
+          </td>
           <td className="py-2 text-sm text-gray-500">{space.rem}</td>
           <td className="py-2 text-sm text-gray-500">{space.px}</td>
           <td className="py-2">
-            <div style={{ width: space.px }} className="h-4 bg-blue-400" title={`${space.px} width`} />
+            <div
+              style={{ width: space.px }}
+              className="h-4 bg-blue-400"
+              title={`${space.px} width`}
+            />
           </td>
         </tr>
       ))}
@@ -52,7 +58,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
 섹션이나 큰 영역 간의 간격(Margin)에 사용됩니다.
 
 <div className="sb-unstyled">
-  <table className="w-full text-left border-collapse">
+  <table className="w-full border-collapse text-left">
     <thead>
       <tr className="border-b border-gray-200">
         <th className="py-2">Token</th>
@@ -70,11 +76,17 @@ import { Meta } from "@storybook/addon-docs/blocks";
         { token: "spacing-18", rem: "4.5rem", px: "72px" },
       ].map((space) => (
         <tr key={space.token} className="border-b border-gray-100">
-          <td className="py-2 font-mono text-sm text-blue-600">{space.token}</td>
+          <td className="py-2 font-mono text-sm text-blue-600">
+            {space.token}
+          </td>
           <td className="py-2 text-sm text-gray-500">{space.rem}</td>
           <td className="py-2 text-sm text-gray-500">{space.px}</td>
           <td className="py-2">
-            <div style={{ width: space.px }} className="h-4 bg-indigo-400" title={`${space.px} width`} />
+            <div
+              style={{ width: space.px }}
+              className="h-4 bg-indigo-400"
+              title={`${space.px} width`}
+            />
           </td>
         </tr>
       ))}
