@@ -3,6 +3,7 @@ import * as React from "react";
 import { TagInput } from "./tag-input";
 import { Label } from "../label";
 import { Plus } from "lucide-react";
+import { Chip } from "../chip";
 
 const meta = {
   title: "Components/TagInput",
@@ -110,19 +111,9 @@ const InteractiveTagInput = (args: React.ComponentProps<typeof TagInput>) => {
 
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <span
-            key={tag}
-            className="typo-body-small-m inline-flex items-center gap-1 rounded-md bg-gray-100 px-2.5 py-1 text-gray-800 dark:bg-gray-800 dark:text-gray-100"
-          >
+          <Chip key={tag} onRemove={() => removeTag(tag)}>
             {tag}
-            <button
-              type="button"
-              onClick={() => removeTag(tag)}
-              className="ml-1 text-gray-400 hover:text-gray-600 focus:outline-none"
-            >
-              &times;
-            </button>
-          </span>
+          </Chip>
         ))}
       </div>
     </div>
