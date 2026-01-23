@@ -42,7 +42,7 @@ const Input = ({
           "selection:bg-primary selection:text-primary-foreground",
           "file:typo-body-m file:typo-body-small-m file:inline-flex file:h-7 file:border-0 file:bg-transparent",
           "disabled:cursor-not-allowed disabled:opacity-50",
-          "focus-visible:border-brand-light focus-visible:outline-none",
+          "focus-visible:border-primary-light focus-visible:outline-none",
           "aria-invalid:border-negative aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40",
           leadingIcon && "pl-10",
           trailingIcon && "pr-10",

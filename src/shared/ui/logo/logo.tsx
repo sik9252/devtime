@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib/utils";
 
 const logoVariants = cva(
-  "inline-block fill-current text-brand-main transition-colors",
+  "inline-block fill-current text-primary transition-colors",
   {
     variants: {},
   },

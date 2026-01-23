@@ -58,7 +58,7 @@ const TagInput = ({
             className={cn(
               "typo-body-b pr-4 transition-colors",
               isActive
-                ? "text-brand-main hover:text-brand-dark cursor-pointer"
+                ? "text-primary hover:text-primary-dark cursor-pointer"
                 : "cursor-not-allowed text-gray-400",
             )}
           >
@@ -72,7 +72,7 @@ const TagInput = ({
           {errorMessage}
         </p>
       ) : helperText ? (
-        <p className="typo-body-small-m text-brand-main">{helperText}</p>
+        <p className="typo-body-small-m text-primary">{helperText}</p>
       ) : null}
     </div>
   );

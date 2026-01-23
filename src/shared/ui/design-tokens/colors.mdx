@@ -27,23 +27,23 @@ export const ColorCard = ({ name, value, className }) => (
 
 <div className="flex flex-col gap-4 my-8">
 
-{/* 1. Brand Main Row */}
+{/* 1. Primary */}
 
 <div>
   <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-    <ColorCard name="Brand Main" value="var(--color-brand-main)" />
-    <ColorCard name="Main 30%" value="var(--brand-main-30)" />
-    <ColorCard name="Main 10%" value="var(--brand-main-10)" />
+    <ColorCard name="Primary" value="var(--color-primary)" />
+    <ColorCard name="Main 30%" value="var(--primary-30)" />
+    <ColorCard name="Main 10%" value="var(--primary-10)" />
   </div>
 </div>
 
-{/* 2. Brand Light Row */}
+{/* 2. Primary Light */}
 
 <div>
   <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-    <ColorCard name="Brand Light" value="var(--color-brand-light)" />
-    <ColorCard name="Light 30%" value="var(--brand-light-30)" />
-    <ColorCard name="Light 10%" value="var(--brand-light-10)" />
+    <ColorCard name="Primary Light" value="var(--color-primary-light)" />
+    <ColorCard name="Light 30%" value="var(--primary-light-30)" />
+    <ColorCard name="Light 10%" value="var(--primary-light-10)" />
   </div>
 </div>
 
@@ -53,9 +53,9 @@ export const ColorCard = ({ name, value, className }) => (
   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
     <ColorCard
       name="Gradient Start"
-      value="var(--color-brand-gradient-start)"
+      value="var(--color-primary-gradient-start)"
     />
-    <ColorCard name="Gradient End" value="var(--color-brand-gradient-end)" />
+    <ColorCard name="Gradient End" value="var(--color-primary-gradient-end)" />
   </div>
 </div>
 
@@ -105,7 +105,7 @@ Dim 처리 및 그림자 효과에 사용되는 컬러입니다.
 상호작용 상태에 따른 컬러 변화입니다.
 
 <div className="my-4 grid grid-cols-2 gap-4 md:grid-cols-4">
-  <ColorCard name="Hover" value="var(--brand-hover)" />
-  <ColorCard name="Active" value="var(--brand-active)" />
-  <ColorCard name="Disabled" value="var(--brand-disabled)" />
+  <ColorCard name="Hover" value="var(--primary-hover)" />
+  <ColorCard name="Active" value="var(--primary-active)" />
+  <ColorCard name="Disabled" value="var(--primary-disabled)" />
 </div>

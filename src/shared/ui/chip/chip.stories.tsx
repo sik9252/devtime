@@ -72,7 +72,7 @@ const InteractiveChip = () => {
           onClick={() =>
             setChips(["React", "Next.js", "TailwindCSS", "Storybook"])
           }
-          className="text-brand-main ml-2 text-xs underline"
+          className="text-primary ml-2 text-xs underline"
         >
           다시 채우기
         </button>
