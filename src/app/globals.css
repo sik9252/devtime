@@ -9,14 +9,14 @@
   /* ============================
      1. Primitive Colors
      ============================ */
-  --color-brand-main: #4c79ff;
-  --color-brand-light: #78b0ff;
+  --color-primary: #4c79ff;
+  --color-primary-light: #78b0ff;
 
   /* 투명도 버전 */
-  --color-brand-main-10: var(--brand-main-10);
-  --color-brand-main-30: var(--brand-main-30);
-  --color-brand-light-10: var(--brand-light-10);
-  --color-brand-light-30: var(--brand-light-30);
+  --color-primary-10: var(--primary-10);
+  --color-primary-30: var(--primary-30);
+  --color-primary-light-10: var(--primary-light-10);
+  --color-primary-light-30: var(--primary-light-30);
 
   /* Gray Scale */
   --color-white: #ffffff;
@@ -44,13 +44,13 @@
   --color-dim-70: var(--dim-70);
 
   /* 상태 버전 (Hover, Active, Disabled) */
-  --color-brand-hover: var(--brand-hover);
-  --color-brand-active: var(--brand-active);
-  --color-brand-disabled-dark: var(--brand-disabled-dark);
-  --color-brand-disabled: var(--brand-disabled);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-primary-disabled-dark: var(--primary-disabled-dark);
+  --color-primary-disabled: var(--primary-disabled);
 
-  --color-brand-gradient-start: #4c79ff;
-  --color-brand-gradient-end: #023e99;
+  --color-primary-gradient-start: #4c79ff;
+  --color-primary-gradient-end: #023e99;
 
   /* ============================
      2. Shadcn Semantic Mapping 
@@ -58,8 +58,10 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  --font-sans:
+    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     sans-serif;
   --font-mono: var(--font-geist-mono);
 
@@ -88,7 +90,6 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -126,16 +127,24 @@
 
   /* Tailwind에서 Figma 토큰명을 동일하게 사용하기 위한 mix 설정 */
   /* Opacity Variants */
-  --brand-main-10: color-mix(in srgb, var(--color-brand-main) 10%, transparent);
-  --brand-main-30: color-mix(in srgb, var(--color-brand-main) 30%, transparent);
-  --brand-light-10: color-mix(in srgb, var(--color-brand-light) 10%, transparent);
-  --brand-light-30: color-mix(in srgb, var(--color-brand-light) 30%, transparent);
+  --primary-10: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  --primary-30: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  --primary-light-10: color-mix(
+    in srgb,
+    var(--color-primary-light) 10%,
+    transparent
+  );
+  --primary-light-30: color-mix(
+    in srgb,
+    var(--color-primary-light) 30%,
+    transparent
+  );
 
   /* State Variants (Black Mix) */
-  --brand-hover: color-mix(in srgb, var(--color-brand-main), black 10%);
-  --brand-active: color-mix(in srgb, var(--color-brand-main), black 20%);
-  --brand-disabled-dark: color-mix(in srgb, var(--color-gray-400), black 20%);
-  --brand-disabled: color-mix(in srgb, var(--color-gray-200), black 20%);
+  --primary-hover: color-mix(in srgb, var(--color-primary), black 10%);
+  --primary-active: color-mix(in srgb, var(--color-primary), black 20%);
+  --primary-disabled-dark: color-mix(in srgb, var(--color-gray-400), black 20%);
+  --primary-disabled: color-mix(in srgb, var(--color-gray-200), black 20%);
 
   /* Dim Variants (Black Overlay) */
   --dim-50: color-mix(in srgb, #000000 50%, transparent);
@@ -152,11 +161,11 @@
   --popover: var(--color-white);
   --popover-foreground: var(--color-gray-800);
 
-  --primary: var(--color-brand-main);
+  --primary: var(--color-primary);
   --primary-foreground: var(--color-white);
 
-  --secondary: var(--color-brand-light);
-  --secondary-foreground: var(--color-brand-main);
+  --secondary: var(--color-primary-light);
+  --secondary-foreground: var(--color-primary);
 
   --muted: var(--color-gray-100);
   --muted-foreground: var(--color-gray-500);
@@ -183,12 +192,12 @@
   /* Sidebar */
   --sidebar: var(--color-gray-50);
   --sidebar-foreground: var(--color-gray-800);
-  --sidebar-primary: var(--color-brand-main);
+  --sidebar-primary: var(--color-primary);
   --sidebar-primary-foreground: var(--color-white);
   --sidebar-accent: var(--color-gray-100);
-  --sidebar-accent-foreground: var(--color-brand-main);
+  --sidebar-accent-foreground: var(--color-primary);
   --sidebar-border: var(--color-gray-200);
-  --sidebar-ring: var(--color-brand-main);
+  --sidebar-ring: var(--color-primary);
 }
 
 .dark {
@@ -198,7 +207,7 @@
   --card-foreground: var(--color-white);
   --popover: var(--color-gray-800);
   --popover-foreground: var(--color-white);
-  --primary: var(--color-brand-main);
+  --primary: var(--color-primary);
   --primary-foreground: var(--color-white);
   --secondary: var(--color-gray-700);
   --secondary-foreground: var(--color-white);
@@ -209,7 +218,7 @@
   --destructive: 0.6 0.2 25;
   --border: var(--color-gray-600);
   --input: var(--color-gray-600);
-  --ring: var(--color-brand-light);
+  --ring: var(--color-primary-light);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -217,12 +226,12 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: var(--color-gray-800);
   --sidebar-foreground: var(--color-white);
-  --sidebar-primary: var(--color-brand-main);
+  --sidebar-primary: var(--color-primary);
   --sidebar-primary-foreground: var(--color-white);
   --sidebar-accent: var(--color-gray-700);
   --sidebar-accent-foreground: var(--color-white);
   --sidebar-border: var(--color-gray-600);
-  --sidebar-ring: var(--color-brand-light);
+  --sidebar-ring: var(--color-primary-light);
 }
 
 @layer base {
