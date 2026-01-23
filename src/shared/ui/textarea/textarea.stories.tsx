@@ -6,6 +6,9 @@ const meta = {
   title: "Components/Textarea",
   component: Textarea,
   tags: ["autodocs"],
+  parameters: {
+    layout: "padded",
+  },
 } satisfies Meta<typeof Textarea>;
 
 export default meta;

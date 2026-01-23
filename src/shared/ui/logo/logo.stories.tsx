@@ -4,9 +4,6 @@ import { Logo } from "./logo";
 const meta = {
   title: "Components/Logo",
   component: Logo,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
   argTypes: {
     variant: {

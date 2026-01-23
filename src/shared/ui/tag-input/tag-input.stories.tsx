@@ -9,9 +9,6 @@ const meta = {
   title: "Components/TagInput",
   component: TagInput,
   tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   decorators: [
     (Story) => (
       <div className="w-[320px]">
