@@ -60,9 +60,9 @@ export const Disabled: Story = {
 export const Checked: Story = {
   render: () => (
     <div className="flex items-center space-x-1">
-      <Checkbox id="checked-demo" defaultChecked />
+      <Checkbox id="checked-demo1" defaultChecked />
       <label
-        htmlFor="checked-demo"
+        htmlFor="checked-demo1"
         className="typo-body-small-m leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
         동의함
@@ -84,8 +84,8 @@ export const WithText: Story = {
         </Label>
       </div>
       <p className="typo-caption-r text-gray-600">
-        이 약관은 DevTime(이하 “서비스”)의 이용 조건 및 절차, 사용자와 서비스
-        제공자(회사) 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+        이 약관은 DevTime(이하 “서비스”)의 이용 조건 및 절차, 사용자와 서비스 제공자(회사) 간의
+        권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
       </p>
     </div>
   ),
@@ -94,9 +94,9 @@ export const WithText: Story = {
 export const Error: Story = {
   render: () => (
     <div className="flex items-center space-x-1">
-      <Checkbox id="checked-demo" aria-invalid="true" />
+      <Checkbox id="checked-demo2" aria-invalid="true" />
       <label
-        htmlFor="checked-demo"
+        htmlFor="checked-demo2"
         className="typo-body-small-m leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
         동의함
