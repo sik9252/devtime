@@ -5,9 +5,6 @@ const meta = {
   title: "Components/Badge",
   component: Badge,
   tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     variant: {
       control: "select",

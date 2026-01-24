@@ -10,6 +10,9 @@ const meta = {
   argTypes: {
     buttonProps: { control: "object" },
   },
+  parameters: {
+    layout: "padded",
+  },
 } satisfies Meta<typeof TextField>;
 
 export default meta;

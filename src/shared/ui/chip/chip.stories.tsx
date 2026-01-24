@@ -6,9 +6,6 @@ const meta = {
   title: "Components/Chip",
   component: Chip,
   tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     onRemove: {
       action: "onRemove",

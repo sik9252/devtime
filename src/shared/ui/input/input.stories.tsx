@@ -35,6 +35,9 @@ const meta = {
       mapping: iconMap,
     },
   },
+  parameters: {
+    layout: "padded",
+  },
 } satisfies Meta<typeof Input>;
 
 export default meta;
@@ -127,12 +130,6 @@ export const Disabled: Story = {
 
 export const WithError: Story = {
   render: (args) => (
-    <Input
-      id="email"
-      placeholder="Placeholder"
-      value="Text"
-      aria-invalid="true"
-      {...args}
-    />
+    <Input id="email" placeholder="Placeholder" value="Text" aria-invalid="true" {...args} />
   ),
 };
