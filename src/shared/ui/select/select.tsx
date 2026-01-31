@@ -31,7 +31,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "typo-body-m md:typo-body-small-m flex w-fit items-center justify-between gap-2 rounded-sm border border-transparent bg-gray-50 px-4 py-3 whitespace-nowrap transition-[color,box-shadow] outline-none",
+        "typo-body-m md:typo-body-small-m flex w-full items-center justify-between gap-2 rounded-sm border border-transparent bg-gray-50 px-4 py-3 whitespace-nowrap transition-[color,box-shadow] outline-none",
         "data-placeholder:text-muted-foreground text-gray-600",
         "dark:bg-input/30 dark:hover:bg-input/50",
         "focus-visible:border-primary-light focus-visible:outline-none",
@@ -68,7 +68,7 @@ function SelectContent({
       <SelectPrimitive.Content
         data-slot="select-content"
         className={cn(
-          "bg-popover text-popover-foreground relative z-50 max-h-(--radix-select-content-available-height) min-w-32 origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-sm border",
+          "bg-popover text-popover-foreground relative z-50 max-h-85 min-w-32 origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-sm border",
           "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
           "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
           "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
