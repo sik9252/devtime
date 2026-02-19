@@ -59,10 +59,9 @@
   --color-foreground: var(--foreground);
 
   --font-sans:
-    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto,
-    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
-    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    sans-serif;
+    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   --font-mono: var(--font-geist-mono);
 
   --color-sidebar-ring: var(--sidebar-ring);
@@ -129,16 +128,8 @@
   /* Opacity Variants */
   --primary-10: color-mix(in srgb, var(--color-primary) 10%, transparent);
   --primary-30: color-mix(in srgb, var(--color-primary) 30%, transparent);
-  --primary-light-10: color-mix(
-    in srgb,
-    var(--color-primary-light) 10%,
-    transparent
-  );
-  --primary-light-30: color-mix(
-    in srgb,
-    var(--color-primary-light) 30%,
-    transparent
-  );
+  --primary-light-10: color-mix(in srgb, var(--color-primary-light) 10%, transparent);
+  --primary-light-30: color-mix(in srgb, var(--color-primary-light) 30%, transparent);
 
   /* State Variants (Black Mix) */
   --primary-hover: color-mix(in srgb, var(--color-primary), black 10%);
@@ -168,7 +159,7 @@
   --secondary-foreground: var(--color-primary);
 
   --muted: var(--color-gray-100);
-  --muted-foreground: var(--color-gray-500);
+  --muted-foreground: var(--color-gray-400);
 
   --accent: var(--color-gray-100);
   --accent-foreground: var(--color-gray-800);
